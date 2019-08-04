@@ -27,20 +27,24 @@ class MainActivity : AppCompatActivity() {
 
         setFragmentEnViewpager();
 
+        setListeners();
+    }
+
+    private fun setListeners() {
         bottomMenu?.setOnNavigationItemSelectedListener {
-            item ->
+                item ->
 
-                val itemSelected: Int = when(item.itemId) {
-                    R.id.item_bottom_home -> 0
-                    R.id.item_bottom_mapa -> 1
-                    R.id.item_bottom_favoritos -> 2
-                    R.id.item_bottom_perfil -> 3
-                    else -> 0
-                }
+            val itemSelected: Int = when(item.itemId) {
+                R.id.item_bottom_home -> 0
+                R.id.item_bottom_mapa -> 1
+                R.id.item_bottom_favoritos -> 2
+                R.id.item_bottom_perfil -> 3
+                else -> 0
+            }
 
-                this.viewpager?.setCurrentItem(itemSelected);
+            this.viewpager?.setCurrentItem(itemSelected);
 
-                true;
+            true;
         }
 
         this.viewpager?.addOnPageChangeListener(object: ViewPager.OnPageChangeListener {
