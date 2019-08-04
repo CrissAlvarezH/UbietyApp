@@ -81,9 +81,7 @@ class MainActivity : AppCompatActivity() {
         this.viewpager?.adapter = fragmentsAdapter;
     }
 
-    class TabsPagerAdapter(fragments: List<Fragment>, fm: FragmentManager?) : FragmentPagerAdapter(fm) {
-
-        private val fragments = fragments;
+    class TabsPagerAdapter(val fragments: List<Fragment>, fm: FragmentManager?) : FragmentPagerAdapter(fm) {
 
         override fun getItem(position: Int): Fragment {
             return fragments.get(position);
