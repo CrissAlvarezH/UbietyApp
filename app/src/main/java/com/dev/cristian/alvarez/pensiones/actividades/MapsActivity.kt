@@ -1,7 +1,8 @@
-package com.dev.cristian.alvarez.pensiones
+package com.dev.cristian.alvarez.pensiones.actividades
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.dev.cristian.alvarez.pensiones.R
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap

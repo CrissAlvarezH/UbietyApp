@@ -23,6 +23,7 @@
         <EditText
                 android:id="@+id/edt_buscar_pension_inicio"
                 android:hint="Buscar"
+                android:backgroundTint="@android:color/transparent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 

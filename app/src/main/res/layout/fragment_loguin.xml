@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        tools:context=".fragments.InicioFragment">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="32sp"
+                android:text="Bienvenido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:textSize="16sp"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:background="#A4F1CA"
+                android:textColor="#01572B"
+                android:padding="20dp"
+                android:text="Ubiety te permite buscar o publicar una pensión dependiendo de lo que quieras hacer, para ellos debes loguearte y, tanto si buscas una pensión como si ofreces una, podrás empezar a usar esta app con todas sus características."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <com.facebook.login.widget.LoginButton
+                android:id="@+id/login_button_facebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp" />
+
+    </LinearLayout>
+
+
+</FrameLayout>
