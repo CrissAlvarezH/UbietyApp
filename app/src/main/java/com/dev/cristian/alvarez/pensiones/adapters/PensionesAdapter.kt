@@ -86,17 +86,17 @@ class PensionesAdapter(pensiones: List<Pension>, val contexto: Context?, var lis
 
             GlideApp
                 .with(it)
-                .load( pension.imgs[0] )
+                .load("https://i.ebayimg.com/images/g/TfEAAOSw3UZa65MA/s-l400.jpg")
                 .into(holder.img1);
 
             GlideApp
                 .with(it)
-                .load( pension.imgs[1] )
+                .load( "https://vida-spyqpdxrgyld6rrkjib.netdna-ssl.com/wp-content/uploads/2018/10/Casas-en-Atia-Residencial-Queretaro-436x300.jpg" )
                 .into( holder.img2 );
 
             GlideApp
                 .with(it)
-                .load( pension.imgs[2] )
+                .load( "https://i.ebayimg.com/images/g/0NUAAOSwQN5aejnd/s-l800.jpg" )
                 .into( holder.img3 );
         }
 

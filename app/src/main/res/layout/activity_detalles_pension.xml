@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+            android:paddingBottom="90dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".actividades.DetallesPensionActivity">
+
+
+        <!-- Toolbar y ViewPager de Imagenes -->
+        <FrameLayout
+                android:background="@android:color/white"
+                android:elevation="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="260dp">
+
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar_detalles_pension"
+                    android:background="#2F000000"
+                    android:elevation="4dp"
+                    app:title=""
+                    android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewpager_imagenes_pension"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+        </FrameLayout>
+
+        <!-- Direccion, precios y cupos -->
+        <LinearLayout
+                android:background="#E6E6E6"
+                android:paddingTop="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/txt_direccion_pension"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:textSize="21sp"
+                    android:text="Crr 23 #34-04"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/txt_precios_pension"
+                        android:textSize="18sp"
+                        android:layout_weight="1"
+                        android:text="$60000 - $800000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <androidx.cardview.widget.CardView
+                        app:cardCornerRadius="10dp"
+                        android:layout_margin="3dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    <TextView
+                            android:id="@+id/txt_num_cupos_pension"
+                            android:paddingBottom="6dp"
+                            android:paddingTop="6dp"
+                            android:paddingRight="10dp"
+                            android:paddingLeft="10dp"
+                            android:textColor="@android:color/black"
+                            android:text="4 Cupos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!-- Propietario -->
+        <LinearLayout
+                android:background="@android:color/white"
+                android:elevation="2dp"
+                android:paddingLeft="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
+
+                <ImageView
+                        android:id="@+id/img_propietario_pension"
+                        android:src="@drawable/paisaje"
+                        android:scaleType="centerCrop"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                    android:id="@+id/txt_nombre_propietario_pension"
+                    android:textSize="16sp"
+                    android:ellipsize="end"
+                    android:textColor="@android:color/black"
+                    android:text="Nombre de la persona"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+        <!-- Mapa -->
+        <FrameLayout
+                android:background="@android:color/white"
+                android:layout_width="match_parent"
+                android:layout_height="160dp">
+
+            <com.google.android.gms.maps.MapView
+                    android:id="@+id/mapview_pension"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="4dp"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="top|right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <ImageView
+                        android:id="@+id/img_ampliar_mapa"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_zoom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+            </androidx.cardview.widget.CardView>
+
+        </FrameLayout>
+
+        <!-- Tabs y Fragments -->
+        <com.google.android.material.tabs.TabLayout
+                android:elevation="2dp"
+                android:background="@color/colorPrimary"
+                android:id="@+id/tabs_detalles_pension"
+                android:layout_width="match_parent"
+                android:theme="@style/ColorAccentBlanco"
+                android:layout_height="wrap_content">
+
+            <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab_servicios"
+                    android:text="Servicios"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab_restricciones"
+                    android:text="Restricciones"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        </com.google.android.material.tabs.TabLayout>
+
+
+        <FrameLayout
+                android:id="@+id/cont_fragment_tabs_pension"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</ScrollView>

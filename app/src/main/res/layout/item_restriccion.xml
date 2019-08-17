@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cont_item_restriccion"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp"
+        android:paddingTop="8dp"
+        android:gravity="center_vertical"
+        android:paddingBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ImageView
+            android:id="@+id/item_img_logo_restriccion"
+            android:src="@drawable/ic_aire_acondicionado"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+    <LinearLayout
+            android:paddingLeft="15dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/item_txt_nombre_restriccion"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:text="Nombre del servicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <androidx.cardview.widget.CardView
+                android:id="@+id/item_card_cont_permision"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                app:cardBackgroundColor="@color/morado"
+                app:cardCornerRadius="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:textColor="@android:color/white"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="3dp"
+                    android:paddingTop="3dp"
+                    android:id="@+id/item_txt_permision_restriccion"
+                    android:text="Permitido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
     private fun setFragmentEnViewpager() {
 
         val fragments = mutableListOf<Fragment>(
-            InicioFragment(),
+            PensionesFragment(),
             MapaFragment(),
             FavoritosFragment(),
             this.definirFragmentLoguin()
