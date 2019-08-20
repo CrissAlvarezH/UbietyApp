@@ -15,6 +15,8 @@ import com.dev.cristian.alvarez.pensiones.actividades.DetallesPensionActivity
 import com.dev.cristian.alvarez.pensiones.adapters.PensionesAdapter
 import com.dev.cristian.alvarez.pensiones.modelos.Pension
 import com.dev.cristian.alvarez.pensiones.modelos.Persona
+import com.dev.cristian.alvarez.pensiones.modelos.Restriccion
+import com.dev.cristian.alvarez.pensiones.modelos.Servicio
 
 
 class PensionesFragment : Fragment(), PensionesAdapter.ListenerClick {
@@ -41,21 +43,57 @@ class PensionesFragment : Fragment(), PensionesAdapter.ListenerClick {
                 listOf(3000, 4000),
                 3,
                 "Crr 5 Cll 34",
-                Persona(1, "Cristian", "Alvarez")
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                Pension.Sexos.MASCULINO,
+                Persona(1, "Cristian", "Alvarez"),
+                listOf(
+                    Servicio(1, "Descripcion del servicio numero 2", Servicio.Tipos.PARQUEADERO),
+                    Servicio(2,  "Descripcion del servicio numero 2", Servicio.Tipos.LAVADO_ROPA),
+                    Servicio(3, "Descripcion del servicio numero 2", Servicio.Tipos.WIFI)
+                ),
+                listOf(
+                    Restriccion(1, Restriccion.Tipos.MASCOTAS, Restriccion.Permisiones.NEGOCIABLE),
+                    Restriccion(2, Restriccion.Tipos.VISITAS_CONYUGALES, Restriccion.Permisiones.NO_PERMITIDO),
+                    Restriccion(3, Restriccion.Tipos.RUIDO, Restriccion.Permisiones.NO_PERMITIDO)
+                )
             ),
             Pension(
                 2,
                 listOf(3400),
                 3,
                 "Crr 23 Cll 4",
-                Persona(1, "Jose", "Ramirez")
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                Pension.Sexos.FEMENINO,
+                Persona(1, "Jose", "Ramirez"),
+                listOf(
+                    Servicio(1, "Descripcion del servicio numero 2", Servicio.Tipos.PARQUEADERO),
+                    Servicio(2,  "Descripcion del servicio numero 2", Servicio.Tipos.LAVADO_ROPA),
+                    Servicio(3, "Descripcion del servicio numero 2", Servicio.Tipos.WIFI)
+                ),
+                listOf(
+                    Restriccion(1, Restriccion.Tipos.MASCOTAS, Restriccion.Permisiones.NEGOCIABLE),
+                    Restriccion(2, Restriccion.Tipos.VISITAS_CONYUGALES, Restriccion.Permisiones.NO_PERMITIDO),
+                    Restriccion(3, Restriccion.Tipos.RUIDO, Restriccion.Permisiones.NO_PERMITIDO)
+                )
             ),
             Pension(
                 3,
                 listOf(1000, 2000, 3000),
                 3,
                 "Crr 9 Cll 12",
-                Persona(1, "Juan", "Hernandez")
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                Pension.Sexos.MIXTO,
+                Persona(1, "Juan", "Hernandez"),
+                listOf(
+                    Servicio(1, "Descripcion del servicio numero 2", Servicio.Tipos.PARQUEADERO),
+                    Servicio(2,  "Descripcion del servicio numero 2", Servicio.Tipos.LAVADO_ROPA),
+                    Servicio(3, "Descripcion del servicio numero 2", Servicio.Tipos.WIFI)
+                ),
+                listOf(
+                    Restriccion(1, Restriccion.Tipos.MASCOTAS, Restriccion.Permisiones.NEGOCIABLE),
+                    Restriccion(2, Restriccion.Tipos.VISITAS_CONYUGALES, Restriccion.Permisiones.NO_PERMITIDO),
+                    Restriccion(3, Restriccion.Tipos.RUIDO, Restriccion.Permisiones.NO_PERMITIDO)
+                )
             )
         );
 
