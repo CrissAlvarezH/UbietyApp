@@ -10,9 +10,13 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.dev.cristian.alvarez.pensiones.R
 import com.dev.cristian.alvarez.pensiones.fragments.*
+import com.dev.cristian.alvarez.pensiones.utils.PermisosUtils
 import com.facebook.AccessToken
 import com.facebook.AccessTokenTracker
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.lang.Exception
+
+private const val COD_PERMISOS = 954;
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,6 +44,8 @@ class MainActivity : AppCompatActivity() {
         viewpager?.setCurrentItem(indexTab);
 
         accesTokenTracker.startTracking();
+
+        PermisosUtils.validarPermisosFaltantes(this, COD_PERMISOS, true)
     }
 
     private fun setListeners() {
@@ -135,7 +141,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    class TabsPagerAdapter(val fragments: MutableList<Fragment>, fm: FragmentManager?) : FragmentPagerAdapter(fm) {
+    class TabsPagerAdapter(private val fragments: MutableList<Fragment>, fm: FragmentManager?) : FragmentPagerAdapter(fm) {
 
         override fun getItem(position: Int): Fragment {
             return fragments.get(position);
@@ -150,6 +156,19 @@ class MainActivity : AppCompatActivity() {
 
             notifyDataSetChanged();
         }
+
+        fun getFragment(posicion: Int): Fragment {
+            return fragments.get(posicion)
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        try {
+            val fragmentMapa: MapaFragment = fragmentsAdapter?.getFragment(1) as MapaFragment;
+            fragmentMapa.establecerMiPosicionEnMapa()
+        } catch ( e: Exception ) { e.printStackTrace() }
     }
 
     override fun onDestroy() {
