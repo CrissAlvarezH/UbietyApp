@@ -13,10 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dev.cristian.alvarez.pensiones.R
 import com.dev.cristian.alvarez.pensiones.actividades.DetallesPensionActivity
 import com.dev.cristian.alvarez.pensiones.adapters.PensionesAdapter
-import com.dev.cristian.alvarez.pensiones.modelos.Pension
-import com.dev.cristian.alvarez.pensiones.modelos.Persona
-import com.dev.cristian.alvarez.pensiones.modelos.Restriccion
-import com.dev.cristian.alvarez.pensiones.modelos.Servicio
+import com.dev.cristian.alvarez.pensiones.modelos.*
 
 
 class PensionesFragment : Fragment(), PensionesAdapter.ListenerClick {
@@ -55,7 +52,8 @@ class PensionesFragment : Fragment(), PensionesAdapter.ListenerClick {
                     Restriccion(1, Restriccion.Tipos.MASCOTAS, Restriccion.Permisiones.NEGOCIABLE),
                     Restriccion(2, Restriccion.Tipos.VISITAS_CONYUGALES, Restriccion.Permisiones.NO_PERMITIDO),
                     Restriccion(3, Restriccion.Tipos.RUIDO, Restriccion.Permisiones.NO_PERMITIDO)
-                )
+                ),
+                Posicion(1, 8.7559054,-75.8882503)
             ),
             Pension(
                 2,
@@ -74,7 +72,8 @@ class PensionesFragment : Fragment(), PensionesAdapter.ListenerClick {
                     Restriccion(1, Restriccion.Tipos.MASCOTAS, Restriccion.Permisiones.NEGOCIABLE),
                     Restriccion(2, Restriccion.Tipos.VISITAS_CONYUGALES, Restriccion.Permisiones.NO_PERMITIDO),
                     Restriccion(3, Restriccion.Tipos.RUIDO, Restriccion.Permisiones.NO_PERMITIDO)
-                )
+                ),
+                Posicion(2, 8.750603,-75.8879927)
             ),
             Pension(
                 3,
@@ -93,7 +92,8 @@ class PensionesFragment : Fragment(), PensionesAdapter.ListenerClick {
                     Restriccion(1, Restriccion.Tipos.MASCOTAS, Restriccion.Permisiones.NEGOCIABLE),
                     Restriccion(2, Restriccion.Tipos.VISITAS_CONYUGALES, Restriccion.Permisiones.NO_PERMITIDO),
                     Restriccion(3, Restriccion.Tipos.RUIDO, Restriccion.Permisiones.NO_PERMITIDO)
-                )
+                ),
+                Posicion(3, 8.7495426,-75.8899775)
             )
         );
 

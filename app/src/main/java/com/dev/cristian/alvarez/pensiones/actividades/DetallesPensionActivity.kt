@@ -20,6 +20,7 @@ import com.dev.cristian.alvarez.pensiones.glide.GlideApp
 import com.dev.cristian.alvarez.pensiones.modelos.Pension
 import com.dev.cristian.alvarez.pensiones.modelos.Restriccion
 import com.dev.cristian.alvarez.pensiones.modelos.Servicio
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -171,12 +172,7 @@ class DetallesPensionActivity : AppCompatActivity(), OnMapReadyCallback {
 
             txtDireccion?.text = it.direccion;
 
-            var precios: String = it.precios[0].toString();
-
-            if ( it.precios.size > 1 )
-                precios += " - ${ it.precios [ it.precios.size - 1 ] }"
-
-            txtPrecios?.text = precios
+            txtPrecios?.text = it.getPrecioMinMax()
 
             txtNumCupos?.text = "${ it.cupos } Cupos"
 
@@ -216,6 +212,17 @@ class DetallesPensionActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap?) {
         googleMap?.uiSettings?.isScrollGesturesEnabled = false;
+
+        pension?.let {
+            googleMap?.addMarker( it.getMarkerOptions() )
+
+            googleMap?.moveCamera(
+                CameraUpdateFactory.newLatLngZoom(
+                    it.posicion.getLatLng(),
+                    16f
+                )
+            )
+        }
     }
 
     override fun onDestroy() {

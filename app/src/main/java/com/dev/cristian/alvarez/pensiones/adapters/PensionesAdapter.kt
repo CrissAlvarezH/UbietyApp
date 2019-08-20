@@ -66,14 +66,7 @@ class PensionesAdapter(pensiones: List<Pension>, val contexto: Context?, var lis
         holder.txtNumCupos.text = "${ pension.cupos } Cupos";
         holder.txtDireccion.text = pension.direccion;
 
-        // Establecemos el precio minimo y el maximo (La lista está ordenada de mayor a menor)
-        var precios = "$${ pension.precios[0] }";
-
-        if ( pension.precios.size > 1 ) {
-            precios += " - $${ pension.precios[ pension.precios.size - 1 ] }";
-        }
-
-        holder.txtPrecios.text = precios;
+        holder.txtPrecios.text = pension.getPrecioMinMax();
 
         // Establecemos los datos de la persona propietaria
         holder.txtNombrePersona.text = "${ pension.propietario.nombres } ${ pension.propietario.apellidos }";
